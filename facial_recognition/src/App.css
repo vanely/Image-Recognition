@@ -1,0 +1,52 @@
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.particles {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.nav {
+    color: #464646;
+}
+
+.ImageLink-p1 {
+    color: #464646;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.Logo-container {
+    border-radius: 50%;
+}
+
+.Logo-super {
+    display: grid;
+    justify-content: center;
+}
+
+/* .SignIn {
+    position: relative;
+    height: 350px;
+}
+
+.SignIn-container {
+    width: 400px;
+    border: 1px solid black;
+}
+
+.SignIn-submit {
+    height: 1px;
+} */
