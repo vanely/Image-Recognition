@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js'; //Particles.js react library
 import Clarifai from 'clarifai'; //Clarifai computer vision oackage API
-import '../App.css';
-import '../ImageLinkForm.css';
+import './App.css';
 import Navigation from '../components/Navigation/Navigation.js';
 import Register from '../components/Register/Register.js';
 import SignIn from '../components/SignIn/SignIn.js';
@@ -20,14 +19,14 @@ const app = new Clarifai.App({
 const particleOptions = {
   particles: {
     number: {
-      value: 200,
+      value: 35,
       density: {
         enable: true,
         value_area: 800
       }
     },
     size: {
-      value: 27.6,
+      value: 10,
       random: true
     }
   }

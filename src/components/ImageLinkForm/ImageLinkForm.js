@@ -1,5 +1,6 @@
 import React from 'react';
 import Tilt from 'react-tilt';
+import './ImageLinkForm.css'
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
