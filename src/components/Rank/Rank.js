@@ -1,13 +1,15 @@
 import React from 'react';
+import './Rank.css';
 
-const Rank = ({name, entries}) => {
+const Rank = ({entries}) => {
   return (
-    <div style={{display: "grid", justifyContent: "center"}}>
-      <div className="white f3">
-        {`${name}, your current entry count is...`}
+    <div className="Rank-EntryContainer">
+      <div className="Rank-EntryText">
+        <p>Current entry count</p>
       </div>
-      <div className="white f1" style={{display: "grid", justifyContent: "center"}}>
-        {entries}
+      <div className="Rank">
+        <p className="bar"></p>
+        <p className="entry">{entries}</p>
       </div>
     </div>
   );

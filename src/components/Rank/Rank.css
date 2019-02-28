@@ -1,0 +1,60 @@
+.Rank-EntryContainer {
+  display: grid;
+  justify-content: center;
+}
+
+.Rank-EntryText {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.Rank {
+  display: grid;
+  justify-content: center;
+  justify-self: center;
+  width: 200px;
+  height: 260px;
+  border-radius: 10px;
+  animation: entry-hover 8s ease-in-out infinite;
+  font-size: 50px;
+  color: white;
+}
+
+.Rank .bar {
+  height: 30px;
+  width: 200px;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: linear-gradient(45deg, rgba(0, 247, 255, 1) 0%, rgba(255, 136, 0, 1) 100%);
+  font-size: 17px;
+}
+
+.Rank .entry {
+  height: 250px;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 50px;
+  color: rgb(216, 216, 216);
+  text-shadow: rgba(0, 0, 0, 0.3) 7px 7px 5px;
+}
+
+@keyframes entry-hover {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-10px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}

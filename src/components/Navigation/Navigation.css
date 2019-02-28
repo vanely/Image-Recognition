@@ -1,0 +1,52 @@
+.Navigation-container {
+  width: 100vw;
+  height: 80px;
+}
+
+.Navigation-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Navigation-signout {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  height: 80px;
+}
+
+.Navigation-signout .selection {
+  padding: 20px;
+  cursor: pointer;
+  transition: linear 0.3s;
+  font-size: 20px;
+}
+
+.Navigation-signout .selection:hover {
+  color: rgb(243, 143, 29);
+}
+
+.Navigation-signout .user {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.Navigation-signout .name {
+  color: rgb(33, 207, 199);
+}
+
+.Navigation-nav .selection {
+  padding: 20px;
+  cursor: pointer;
+  transition: linear 0.3s;
+  font-size: 20px;
+  color: #999;
+}
+
+.Navigation-nav .signin:hover {
+  color: rgb(33, 207, 199);
+}
+
+.Navigation-nav .register:hover {
+  color: rgb(243, 143, 29);
+}

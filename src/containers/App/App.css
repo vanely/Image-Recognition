@@ -1,0 +1,27 @@
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+.particles {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.App-signinContainer, .App-registerContainer {
+    display: grid;
+    justify-content: space-around;
+}
+
+.App-Signin {
+    display: grid;
+    position: relative;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-color: #262626;
+    z-index: 0;
+}

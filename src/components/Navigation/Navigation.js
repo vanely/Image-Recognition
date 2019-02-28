@@ -1,21 +1,29 @@
 import React from 'react';
+import './Navigation.css';
 
-const Navigation = ({ onRouteChange, isSignedIn }) => {
+const Navigation = ({name, onRouteChange, isSignedIn }) => {
     if(isSignedIn) {
       return (
-        <div>
-          <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-            <p onClick={() => onRouteChange('signout')} className="nav f3 link dim underline pa3 pointer">Sign Out</p>
+        <div className="Navigation-container">
+          <nav className = "Navigation-signout">
+            <p className="user">Hello, <span className="name">{name}</span></p>
+            <p className="selection" onClick={() => onRouteChange('signout')}>Sign Out</p>
           </nav>
         </div>
       );
     } 
     else {
       return (
-        <div>
-            <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-              <p onClick={() => onRouteChange('signin')} className="nav f3 link dim underline pa3 pointer">Sign In</p>
-              <p onClick={() => onRouteChange('register')} className="nav f3 link dim underline pa3 pointer">Register</p>
+        <div className="Navigation-container">
+            <nav className="Navigation-nav">
+              <p className="selection signin"
+              onClick = {
+                () => onRouteChange('signin')
+              }> Sign In </p>
+              <p className="selection register"
+              onClick={
+                () => onRouteChange('register')
+              }> Register </p>
             </nav>
         </div>
       );

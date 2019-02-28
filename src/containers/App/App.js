@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import Particles from 'react-particles-js'; //Particles.js react library
 import Clarifai from 'clarifai'; //Clarifai computer vision oackage API
 import './App.css';
-import Navigation from '../components/Navigation/Navigation.js';
-import Register from '../components/Register/Register.js';
-import SignIn from '../components/SignIn/SignIn.js';
-import Logo from '../components/Logo/Logo.js';
-import Rank from '../components/Rank/Rank.js';
-import ImageLinkForm from '../components/ImageLinkForm/ImageLinkForm.js';
-import FaceRecognition from '../components/FaceRecognition/FaceRecognition.js';
+import Navigation from '../../components/Navigation/Navigation.js';
+import Register from '../Register/Register.js';
+import SignIn from '../SignIn/SignIn.js';
+import Logo from '../../components/Logo/Logo.js';
+import Rank from '../../components/Rank/Rank.js';
+import ImageLinkForm from '../../components/ImageLinkForm/ImageLinkForm.js';
+import FaceRecognition from '../../components/FaceRecognition/FaceRecognition.js';
 
 //initialization for clarifai image recognition API
 const app = new Clarifai.App({
-  apiKey: 'dec331faeab64cc8aa7271c8cdd3fbea'
+  apiKey: '5b7140d282c14163b08f1c1acf7992f3'
  });
 
 //object configuration for particles.js
@@ -165,25 +165,34 @@ class App extends Component {
 
     const { isSignedIn, imageUrl, route ,box } = this.state;
     return (
-        <div className='App'>
+        <div className="App-Signin">
           <Particles className="particles" params={particleOptions}/>
-          <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+          < Navigation name = {
+            this.state.user.name
+          }
+          isSignedIn = {
+            isSignedIn
+          }
+          onRouteChange = {
+            this.onRouteChange
+          }
+          />
           
           {route === 'home'
             ? <div>
-                <Logo/>
-                <Rank name={this.state.user.name} entries={this.state.user.entries}/>
+                <Rank entries={this.state.user.entries}/>
+                {/* <Logo/> */}
                 <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onSubmit}/>
                 <FaceRecognition box={box} imageUrl={imageUrl}/>
               </div>
             
             : (
                 route === 'signin' 
-                ? <div>
-                    <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                ? <div className="App-signinContainer">
+                    <SignIn className="App-top" loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
                   </div> 
 
-                : <div>
+                : <div className="App-registerContainer">
                     <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
                   </div>
               )

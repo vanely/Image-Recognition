@@ -3,11 +3,11 @@ import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, box }) => {
   return (
-    <div className="center sa">
-      <div className="FaceRecognition-div center">
+    <div className="FaceRecognition-container">
+      <div className="FaceRecognition-div">
         <img id="inputimage" src={imageUrl} alt=""/>
         {/* face detection box bordering image} */}
-        <div className="bounding_box" style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
+        <div className="FaceRecognition-bounding_box" style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
       </div>
     </div>
   );

@@ -1,22 +1,18 @@
 import React from 'react';
-import Tilt from 'react-tilt';
 import './ImageLinkForm.css'
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div className="ImageLink-container">
-      <p className="ImageLink-p1 f3">
-          {'This magic brain will defect faces in your pictures'}
+      <p className="ImageLink-p1">
+          {'Enter image URL for face detection'}
       </p>
-      <Tilt options={{max: 25}}>
-        <div className="ImageLink-pattern pa4 br3 shadow-5">
-          <div className="center">
-            <input className="f4 pa2 w-70 center" type="text" onChange={onInputChange}/>
-            <button className="w-30 grow f4 link ph3 pv2 dib white bg-light-purple" onClick={onButtonSubmit}>Detect</button>
+        <div className="ImageLink">
+          <div className="input">
+            <input type="text" onChange={onInputChange}/>
+            <button onClick={onButtonSubmit}>Detect</button>
           </div>
-        </div>
-      </Tilt>
-      
+        </div>      
     </div>
   );
 }
