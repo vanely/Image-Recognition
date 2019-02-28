@@ -5,7 +5,6 @@ import './App.css';
 import Navigation from '../../components/Navigation/Navigation.js';
 import Register from '../Register/Register.js';
 import SignIn from '../SignIn/SignIn.js';
-import Logo from '../../components/Logo/Logo.js';
 import Rank from '../../components/Rank/Rank.js';
 import ImageLinkForm from '../../components/ImageLinkForm/ImageLinkForm.js';
 import FaceRecognition from '../../components/FaceRecognition/FaceRecognition.js';
@@ -181,7 +180,6 @@ class App extends Component {
           {route === 'home'
             ? <div>
                 <Rank entries={this.state.user.entries}/>
-                {/* <Logo/> */}
                 <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onSubmit}/>
                 <FaceRecognition box={box} imageUrl={imageUrl}/>
               </div>

@@ -68,7 +68,7 @@ class Register extends React.Component {
 					<fieldset>
 
 						<legend>Name</legend>
-						<input onChange={this.onDisplayNameChange} type="text" placeholder="name"/>  
+						<input onChange={this.onNameChange} type="text" placeholder="name"/>  
 
 					</fieldset>
 
