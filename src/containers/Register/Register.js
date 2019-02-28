@@ -14,25 +14,28 @@ class Register extends React.Component {
 		};
 	}
 
+	// store name
 	onNameChange = (event) => {
 		this.setState({
 			name: event.target.value
 		});
 	}
 
+	// store email
 	onEmailChange = (event) => {
 		this.setState({
 			email: event.target.value
 		});
 	}
 
+	// store password
 	onPasswordChange = (event) => {
 		this.setState({
 			password: event.target.value
 		});
 	}
 
-	//sends user info to backend/ loads user info to profile
+	// post user info to DB, and populate on profile
 	onRegister = () => {
 
 		fetch('http://localhost:2000/register', {

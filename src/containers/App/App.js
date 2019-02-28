@@ -9,7 +9,7 @@ import Rank from '../../components/Rank/Rank.js';
 import ImageLinkForm from '../../components/ImageLinkForm/ImageLinkForm.js';
 import FaceRecognition from '../../components/FaceRecognition/FaceRecognition.js';
 
-//initialization for clarifai image recognition API
+//initialization for clarifai API
 const app = new Clarifai.App({
   apiKey: '5b7140d282c14163b08f1c1acf7992f3'
  });
@@ -31,7 +31,7 @@ const particleOptions = {
   }
 };
 
-// states kept outside so this variable can be called when a state reset is needed.
+// state kept outside so 'initialState' can be called when state reset is needed.
 const initialState = {
   
   //url from input field
@@ -63,7 +63,7 @@ class App extends Component {
     this.state = initialState;
   }
 
-  //load user profile after registration
+  //load user profile on signin and registration
   loadUser = (data) => {
 
     this.setState({user: {
@@ -75,10 +75,10 @@ class App extends Component {
     }});
   }
 
-  //calculation for dimensions of where border goes around face
+  //calculation dimensions of border around face
   calculateFaceLocation = (data) => {
 
-    //percentages of the image size where face is located 
+    //points where face is located 
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
@@ -86,16 +86,15 @@ class App extends Component {
     console.log(width, height);
     return {
 
-      //face location percentages multiplied by the corresponding length or height equals where the border begins
+      //location points * corresponding length or height = border beginning
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      //subract width for reverse direction
       rightCol: width - (clarifaiFace.right_col * width),
       bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
 
-  //populates box state object with dimensions for face detection
+  //generates box state object with dimensions for face detection
   displayFaceDetectionBox = (box) => {
 
     this.setState({box: box}); 
@@ -135,7 +134,6 @@ class App extends Component {
         })
         .catch(console.log);
       }
-        //use this since we're in a class
         this.displayFaceDetectionBox(this.calculateFaceLocation(response));
         console.log(response);
       }

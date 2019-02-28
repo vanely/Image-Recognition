@@ -13,19 +13,21 @@ class SignIn extends React.Component {
     }
   }
 
+  // store email
   onEmailChange = (event) => {
     this.setState({
       signInEmail: event.target.value
     });
   }
 
+  //store password
   onPasswordChange = (event) => {
     this.setState({
       signInPassword: event.target.value
     });
   }
 
-  //submit user data
+  // post user signin info for authentication
   onSubmitSignIn = () => {
 
     fetch('http://localhost:2000/signin', {
